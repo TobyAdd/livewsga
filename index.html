@@ -9,7 +9,7 @@
 <body>
 
 <script type = "text/javascript">  
-	function open() {   
+	function openlws() {   
 		let text = document.getElementById('myURL').value;
 		window.open('https://www.liveworksheets.com/lwsmaker/howwasitmadeeditor.asp?edit=' + text.replace("https://www.liveworksheets.com/", "").replace("/", ""));
 	}  
@@ -21,6 +21,6 @@
 <p>Please enter id of test for getting answers:</p>
 <label for="fname">ID:</label>
 <input id="myURL" name="myURL" type="url" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;">
-<input type="button" id="btn" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;" value="Submit" onClick="open()" />
+<input type="button" id="btn" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;" value="Submit" onClick="openlws()" />
 </body>
 </html>
