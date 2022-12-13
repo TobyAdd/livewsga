@@ -8,6 +8,12 @@
 </head>
 <body>
 
+<script type = "text/javascript">  
+	function open() {   
+		let text = document.getElementById('myURL').value;
+		window.open('https://www.liveworksheets.com/lwsmaker/howwasitmadeeditor.asp?edit=' + text.replace("https://www.liveworksheets.com/", "").replace("/", ""));
+	}  
+</script>  
 
 <h2>Liveworksheets Answers Getter by TobyAdd</h2>
 <a href="https://youtu.be/Kqp4CICBRiQ" STYLE="color: #FFFFFF;">How To Use It</a>
@@ -15,6 +21,6 @@
 <p>Please enter id of test for getting answers:</p>
 <label for="fname">ID:</label>
 <input id="myURL" name="myURL" type="url" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;">
-<input type="button" id="btn" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;" value="Submit" onClick="javascript: window.open('https://www.liveworksheets.com/lwsmaker/howwasitmadeeditor.asp?edit=' + document.getElementById('myURL').value);" />
+<input type="button" id="btn" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;" value="Submit" onClick="open()" />
 </body>
 </html>
