@@ -2,30 +2,37 @@
 <html>
 	<head>
 	  <title>Liveworksheets Answers Getter</title>
-	  <link href="https://raw.githubusercontent.com/TobyAdd/livewsga/main/avatar.png" rel="shortcut icon">
-	  <link rel="stylesheet" href="darkmode.css">
+	  <link href="img/avatar.png" rel="shortcut icon">
+	  <link rel="stylesheet" href="css/darkmode.css">
 	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	</head>
 
 	<script type = "text/javascript">  
 		function openlws() {   
-			let text = document.getElementById('myURL').value;
+			let text = document.getElementById('url').value;
 			window.open('https://www.liveworksheets.com/lwsmaker/howwasitmadeeditor.asp?edit=' + text.replace("https://www.liveworksheets.com/", ""));
 		}  
 	</script>  
 
 	<body>
-		<h2>Liveworksheets Answers Getter by TobyAdd</h2>
-		<a href="https://youtu.be/Kqp4CICBRiQ" STYLE="color: #FFFFFF;">How To Use It</a>
-		<p>NOTE: You must be registered and logged into liveworksheet account<p>
-		<p>Please enter id of test for getting answers:</p>
-		<label for="fname">ID:</label>
-		<input id="myURL" name="myURL" type="url" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;">
-		<input type="button" id="btn" STYLE="color: #FFFFFF; font-size: 18px; background-color: #404040; border-color: white;" value="Submit" onClick="openlws()"/>
-
-		<br clear=all/>
-		<p style="display:inline">This site was visited</p>
-		<img src="https://counter.digits.net/?counter={04e95762-e8a6-2804-ed4c-fd0804b1065c}&template=simple" alt="Hit Counter by Digits" border="0"/>
-		<p style="display:inline">times. Thanks to all!</p>
+		<div class="headline">
+			<h1>Liveworksheets Answers Getter <span class="note">by TobyAdd</span></h1>
+		</div>
+		<div class="container">
+			<h3>How to use</h3>
+			<ol>
+				<li>Head to the <a href="https://www.liveworksheets.com">LiveWorksheets</a> website</li>
+				<li>Copy the test URL</li>
+				<li>Paste it here and click the <b>Submit</b> button</li>
+			</ol>
+			<small>Still gon't get it? Watch the <a href="https://youtu.be/Kqp4CICBRiQ">video tutorial</a>. <a class="highlight">You should be logged into liveworksheet account in order to view the answers page.</a></small>
+		</div>
+		<div class="container">
+			<h3>Answers getter</h3>
+			<label for="url">Test URL:</label>
+			<input id="url" class="form-input" name="url" type="url">
+			<input type="button" class="form-input" id="btn" value="Submit" onClick="openlws()"/>
+		</div>
+		<small>This site was visited <img src="https://counter.digits.net/?counter={04e95762-e8a6-2804-ed4c-fd0804b1065c}&template=simple" alt="Hit Counter by Digits"/> times. Thanks to all!</small>
 	</body>
 </html>
