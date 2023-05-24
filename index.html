@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Liveworksheets Answers Getter</title>
+  <link href="img/avatar.png" rel="shortcut icon">
+  <link rel="stylesheet" href="css/darkmode.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="headline">
+    <h1>Liveworksheets Answers Getter <span class="note">by TobyAdd</span></h1>
+  </div>
+  <div class="container">
+    <h3>How to use</h3>
+    <ol>
+      <li>Head to the <a href="https://www.liveworksheets.com">LiveWorksheets</a> website</li>
+      <li>Copy the test URL</li>
+      <li>Paste it here and click the <b>Submit</b> button</li>
+    </ol>
+    <small>Still don't get it? Watch the <a href="https://youtu.be/Kqp4CICBRiQ">video tutorial</a>. <a class="highlight">You should be logged into liveworksheet account in order to view the answers page.</a></small>
+  </div>
+  <div class="container">
+    <h3>Answers getter</h3>
+    <label for="url">Test URL:</label>
+    <input id="url" class="form-input" name="url" type="url">
+    <input type="button" class="form-input" id="btn" value="Submit" onclick="openlws()" />
+  </div>
+  <small>This site was visited <img src="https://counter.digits.net/?counter={04e95762-e8a6-2804-ed4c-fd0804b1065c}&template=simple" alt="Hit Counter by Digits" /> times. Thanks to all!</small>
+
+  <script type="text/javascript">
+    function openlws() {
+      const text = document.getElementById('url').value;
+      if (text) {
+        const editUrl = 'https://www.liveworksheets.com/lwsmaker/howwasitmadeeditor.asp?edit=';
+        const finalUrl = text.includes(".com/") ? editUrl + text.split('.com/')[1] || text : editUrl + text;
+        window.location.href = finalUrl;
+      }
+    }
+  </script>
+</body>
+</html>
