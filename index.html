@@ -1,41 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Liveworksheets Answers Getter</title>
-  <link href="img/avatar.png" rel="shortcut icon">
-  <link rel="stylesheet" href="css/darkmode.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="avatar.png" rel="shortcut icon">
+	<title>Liveworksheets Answers Getter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1c1c1c;
+            color: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            position: relative;
+        }
+
+        .container {
+            background-color: #2a2a2a;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        h3 {
+            font-size: small;
+            color: #a0a0a0;
+        }
+
+        code {
+            display: block;
+            background-color: #353535;
+            padding: 10px;
+            border-radius: 4px;
+            font-family: monospace;
+            white-space: pre-wrap;
+            margin-top: 20px;
+            color: #ffffff;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 10px;
+        }
+
+        button.copied {
+            background-color: #28a745;
+        }
+
+        small {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+    </style>
 </head>
 <body>
-  <div class="headline">
-    <h1>Liveworksheets Answers Getter <span class="note">by TobyAdd</span></h1>
-  </div>
-  <div class="container">
-    <h3>How to use</h3>
-    <ol>
-      <li>Head to the <a href="https://www.liveworksheets.com">LiveWorksheets</a> website</li>
-      <li>Copy the test URL</li>
-      <li>Paste it here and click the <b>Submit</b> button</li>
-    </ol>
-    <small>Still don't get it? Watch the <a href="https://youtu.be/Kqp4CICBRiQ">video tutorial</a>. <a class="highlight">You should be logged into liveworksheet account in order to view the answers page.</a></small>
-  </div>
-  <div class="container">
-    <h3>Answers getter</h3>
-    <label for="url">Test URL:</label>
-    <input id="url" class="form-input" name="url" type="url">
-    <input type="button" class="form-input" id="btn" value="Submit" onclick="openlws()" />
-  </div>
-  <small>This site was visited <img src="https://counter.digits.net/?counter={04e95762-e8a6-2804-ed4c-fd0804b1065c}&template=simple" alt="Hit Counter by Digits" /> times. Thanks to all!</small>
+    <div class="container">
+        <h2>Liveworksheets Answers Getter by TobyAdd</h2>
+        <h3>Since the Liveworksheets website was updated, we have changed the way to get answers. Now you need to paste this code into the console and run it.</h3>
+        <code id="codeSnippet">jQuery("#worksheet-preview").worksheetPreview("validation", { clicked: false, showAnswers: false, showRightAnswers: true });</code>
+        <div class="button-container">
+            <button id="copyButton">Copy to Clipboard</button>
+            <button id="copiedButton" style="display: none;" class="copied" disabled>Code Copied</button>
+        </div>
+    </div>
 
-  <script type="text/javascript">
-    function openlws() {
-      const text = document.getElementById('url').value;
-      if (text) {
-        const editUrl = 'https://www.liveworksheets.com/lwsmaker/howwasitmadeeditor.asp?edit=';
-        const finalUrl = text.includes(".com/") ? editUrl + text.split('.com/')[1] || text : editUrl + text;
-        window.location.href = finalUrl;
-      }
-    }
-  </script>
+    <small>This site was visited <img src="https://counter.digits.net/?counter={04e95762-e8a6-2804-ed4c-fd0804b1065c}&template=simple" alt="Hit Counter by Digits" /> times. Thanks to all!</small>
+
+    <script>
+        document.getElementById("copyButton").addEventListener("click", function () {
+            const codeSnippet = document.getElementById("codeSnippet");
+            const textToCopy = codeSnippet.innerText;
+
+            const tempTextarea = document.createElement("textarea");
+            tempTextarea.value = textToCopy;
+            document.body.appendChild(tempTextarea);
+            tempTextarea.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempTextarea);
+
+            const copyButton = document.getElementById("copyButton");
+            const copiedButton = document.getElementById("copiedButton");
+
+            copyButton.style.display = "none";
+            copiedButton.style.display = "block";
+
+            setTimeout(function () {
+                copiedButton.style.display = "none";
+                copyButton.style.display = "block";
+            }, 2000);
+
+            copiedButton.classList.add("copied");
+        });
+    </script>
 </body>
 </html>
