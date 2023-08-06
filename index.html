@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="avatar.png" rel="shortcut icon">
-	<meta property="og:title" content="Liveworksheets Answers Getter">
-	<meta property="og:description" content="A tool to get answers from Liveworksheets">
-	<meta property="og:image" content="avatar.png">
-	<meta property="og:url" content="https://your-webpage-url.com">
 
 	<title>Liveworksheets Answers Getter</title>
     <style>
@@ -67,6 +63,7 @@
             display: flex;
             justify-content: center;
             margin-top: 10px;
+            gap: 10px;
         }
 
         button.copied {
@@ -90,6 +87,7 @@
         <div class="button-container">
             <button id="copyButton">Copy to Clipboard</button>
             <button id="copiedButton" style="display: none;" class="copied" disabled>Code Copied</button>
+            <button id="forSmartphoneButton">For Smartphone</button>
         </div>
     </div>
 
@@ -119,6 +117,10 @@
             }, 2000);
 
             copiedButton.classList.add("copied");
+        });
+
+        document.getElementById("forSmartphoneButton").addEventListener("click", function () {
+            window.location.href = "phone.html";
         });
     </script>
 </body>
